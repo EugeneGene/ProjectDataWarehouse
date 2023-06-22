@@ -8,7 +8,6 @@ config.read('dwh.cfg')
 ARN = config['IAM_ROLE']['ARN']
 
 # DROP TABLES
-
 staging_events_table_drop = "DROP TABLE IF EXISTS log_data;"
 staging_songs_table_drop = "DROP TABLE IF EXISTS song_data;"
 songplay_table_drop = "DROP TABLE IF EXISTS factSongPlays;"
@@ -18,7 +17,6 @@ artist_table_drop = "DROP TABLE IF EXISTS dimTime;"
 time_table_drop = "DROP TABLE IF EXISTS dimArtists;"
 
 # CREATE TABLES
-
 staging_events_table_create= ("""CREATE TABLE IF NOT EXISTS log_data (
 artist VARCHAR,
 auth VARCHAR,
@@ -94,7 +92,6 @@ year       INT NOT NULL,
 weekday    INT NOT NULL);""")
 
 # STAGING TABLES
-
 staging_events_copy = ("""
 COPY song_data
 FROM 's3://udacity-dend/song_data/A/A'
@@ -108,7 +105,6 @@ CREDENTIALS 'aws_iam_role={}'
 FORMAT AS JSON 's3://udacity-dend/log_json_path.json';""").format(ARN)
 
 # FINAL TABLES
-
 songplay_table_insert = ("""
 INSERT INTO factSongPlays (song_id, artist_id,
                             session_id,user_id, start_time,

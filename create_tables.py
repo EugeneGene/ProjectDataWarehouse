@@ -4,6 +4,16 @@ from sql_queries import create_table_queries, drop_table_queries
 
 
 def drop_tables(cur, conn):
+    """
+    Drops existing tables from the database.
+
+    Args:
+        cur: The database cursor.
+        conn: The database connection.
+
+    Returns:
+        None
+    """
     for query in drop_table_queries:
         table_name = query
         print("{} ...".format(table_name))
@@ -12,6 +22,17 @@ def drop_tables(cur, conn):
 
 
 def create_tables(cur, conn):
+    """
+    Creates tables in the database.
+    
+
+    Args:
+        cur: The database cursor.
+        conn: The database connection.
+
+    Returns:
+        None
+    """
     for query in create_table_queries:
 
         table_name = query.split(" ")[5]

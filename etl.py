@@ -5,6 +5,17 @@ import time
 
 
 def load_staging_tables(cur, conn):
+    """
+    Loads data into staging tables which are defined in 
+    copy_table_queries LIST located in sql_queries.py file. 
+
+    Args:
+        cur: The database cursor.
+        conn: The database connection.
+
+    Returns:
+        None
+    """
     for query in copy_table_queries:
         table_name = query[0:27].splitlines()[1]
         print("{} ...".format(table_name))
@@ -20,6 +31,18 @@ def load_staging_tables(cur, conn):
 
 
 def insert_tables(cur, conn):
+    """
+    Inserts data into star schema tables which are defined in 
+    insert_table_queries LIST located in sql_queries.py file. 
+
+    Args:
+        cur: The database cursor.
+        conn: The database connection.
+
+    Returns:
+        None
+    """
+
     for query in insert_table_queries:
         table_name = query[0:40].split("(")[0]
         print("{}...".format(table_name))
