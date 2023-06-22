@@ -7,7 +7,7 @@ The project contains the scripts used to manage two data sets:
 The first step was to create staging tables and a set of tables in the star schema.
 
 Specifically below is a diagram of the two staging tables.
-![Staging Tables](images/staging_tables.png.png)
+![Staging Tables](images/staging_tables.png)
 
 The goal of the project was to transfer the data into Fact (1) and Dimension (2) tables as pictured below.
 ![Star Schema Tables](images/starschema.png)
