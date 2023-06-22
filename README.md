@@ -25,5 +25,4 @@ EDA didn't reveal any inconsistencies with uniques for the other Dimension table
 
 Below is a diagram of the log_data and song_data tables:
 
-changed.
 
